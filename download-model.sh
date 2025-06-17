@@ -1,0 +1,1 @@
+wget -c https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v1.bin

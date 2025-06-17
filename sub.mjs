@@ -15,8 +15,6 @@ import {
   WHISPER_VERSION,
 } from "./whisper-config.mjs";
 import {
-  downloadWhisperModel,
-  installWhisperCpp,
   transcribe,
   toCaptions,
 } from "@remotion/install-whisper-cpp";
@@ -114,9 +112,6 @@ const processDirectory = async (directory) => {
     }
   }
 };
-
-await installWhisperCpp({ to: WHISPER_PATH, version: WHISPER_VERSION });
-await downloadWhisperModel({ folder: WHISPER_PATH, model: WHISPER_MODEL });
 
 // Read arguments for filename if given else process all files in the directory
 const hasArgs = process.argv.length > 2;
