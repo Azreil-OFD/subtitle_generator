@@ -25,7 +25,8 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 WORKDIR /app
-RUN source download-model.sh
+RUN chmod +x ./download-model.sh
+RUN ./download-model.sh
 RUN node initial.mjs && mv /app/ggml-large-v1.bin /app/whisper.cpp/ggml-large-v1.bin
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]
